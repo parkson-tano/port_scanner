@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Scanner with Banner Grabbing</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Port Scanner with Banner Grabbing</h1>
+        <form method="post" id="portScannerForm">
+            <div class="form-group">
+                <label for="target_ip">Target IP:</label>
+                <input type="text" class="form-control" name="target_ip" required>
+            </div>
+            <div class="form-group">
+                <label for="start_port">Start Port:</label>
+                <input type="number" class="form-control" name="start_port" required>
+            </div>
+            <div class="form-group">
+                <label for="end_port">End Port:</label>
+                <input type="number" class="form-control" name="end_port" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="scanPorts()">Scan Ports</button>
+            <!-- Spinner for progress -->
+            <div class="spinner-border text-primary mt-2" role="status" style="display: none;" id="loadingSpinner">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </form>
+        <!-- Display result as a card -->
+        <div class="mt-4" id="resultContainer">
+            {% if result %}
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Scan Result</h5>
+                        <pre>{{ result }}</pre>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <!-- Footer -->
+        <footer class="mt-5">
+            <p class="text-muted">All rights reserved to Brandon Awan</p>
+            <p class="text-muted">Contact: <a href="mailto:brandonawan855@gmail.com">brandonawan855@gmail.com</a></p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function scanPorts() {
+            // Show the loading spinner
+            document.getElementById("loadingSpinner").style.display = "inline-block";
+            setTimeout(function() {
+                document.getElementById("loadingSpinner").style.display = "none";
+                document.getElementById("portScannerForm").submit();
+            }, 2000); 
+        }
+    </script>
+</body>
+</html>
