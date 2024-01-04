@@ -7,11 +7,14 @@ This Python script is a simple port scanner that allows you to scan a range of p
 To use the port scanner, follow the steps below:
 
 1. Open a terminal or command prompt.
-2. Navigate to the directory where the `index.py` file is located.
-3. Run the script with the following command:
+2.     ```
+    pip install -r requirements.txt
+    ```
+3. Navigate to the directory where the `main.py` file is located.
+4. Run the script with the following command:
 
     ```
-    python index.py <target_ip> <start_port> <end_port>
+    python3 index.py <target_ip> <start_port> <end_port>
     ```
 
     Replace `<target_ip>` with the IP address you want to scan, `<start_port>` with the starting port number, and `<end_port>` with the ending port number.
