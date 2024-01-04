@@ -7,7 +7,8 @@ This Python script is a simple port scanner that allows you to scan a range of p
 To use the port scanner, follow the steps below:
 
 1. Open a terminal or command prompt.
-2.     ```
+2.     
+    ```
     pip install -r requirements.txt
     ```
 3. Navigate to the directory where the `main.py` file is located.
