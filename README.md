@@ -36,6 +36,7 @@ To use the command-line version, follow the steps below:
 
     Replace `<target_ip>` with the IP address you want to scan, `<start_port>` with the starting port number, and `<end_port>` with the ending port number.
 5. The script will scan the specified range of ports on the target IP address and display the results.
+![Command-Line Interface](/images/commandline.png)
 
 ### Web-Based UI
 
